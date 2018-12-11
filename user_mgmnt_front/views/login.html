@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Custom Theme files -->
+  <link rel="stylesheet" href="./assets/css/bootstrap_theme.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/logo-nav.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body ng-app="userapp">
+    <!-- main -->
+    <div class="main-w3layouts wrapper" ng-controller="LoginController as login">
+        <h1>User Login Form</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form ng-submit="login.login()">
+                    <!-- authentication failure msg -->
+                    <div class="alert alert-danger" ng-show="loginFlag == 0">
+                        Email / Password is wrong
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" ng-model="login.credentials.email" placeholder="jhon@gmail.com">
+                    </div>
+                     <div class="form-group row">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" ng-model="login.credentials.password">
+                    </div>
+                    <!-- -->
+
+                    <input type="submit" value="LOGIN">
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+</body>
+</html>

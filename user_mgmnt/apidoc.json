@@ -1,0 +1,8 @@
+{
+    "name": "User Management API documentation",
+    "version": "1.0.0",
+    "description": "API user list manager",
+    "template": {
+        "forceLanguage": "en"
+    }
+}

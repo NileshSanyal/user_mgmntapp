@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="loading">
+
+<head>
+    <% include ../partials/head.ejs%>
+</head>
+
+<body data-col="2-columns" class=" 2-columns ">
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <div class="wrapper">
+
+
+        <!-- main menu-->
+        <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
+        <% include ../partials/sidemenu.ejs%>
+            <!-- / main menu-->
+
+            <!-- Navbar (Header) Starts-->
+            <% include ../partials/header.ejs%>
+                <!-- Navbar (Header) Ends-->
+
+                <div class="main-panel">
+                    <div class="main-content">
+                        <div class="content-wrapper">
+                            <%- body %>
+                        </div>
+                    </div>
+                </div>
+
+                <!--BEGIN FOOTER-->
+                <% include ../partials/footer.ejs%>
+                    <!--END FOOTER-->
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <script>        
+        var apiBaseURL = "http://localhost:1271/admin";
+        // console.log("API BASE URL >> " + apiBaseURL);
+    </script>
+    <!-- BEGIN VENDOR JS-->
+    <script src="/vendors/js/core/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
+    <script src="/vendors/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="/vendors/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/vendors/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <script src="/vendors/js/prism.min.js" type="text/javascript"></script>
+    <script src="/vendors/js/jquery.matchHeight-min.js" type="text/javascript"></script>
+    <script src="/vendors/js/screenfull.min.js" type="text/javascript"></script>
+    <script src="/vendors/js/pace/pace.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="/vendors/js/sweetalert2.min.js" type="text/javascript"></script>
+    <script src="/vendors/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script src="/vendors/js/toastr.min.js" type="text/javascript"></script>
+    <script src="/vendors/js/jqBootstrapValidation.js" type="text/javascript"></script>
+    <script src="/vendors/js/switchery.min.js" type="text/javascript"></script>
+    <script src="/vendors/jstree/dist/jstree.min.js"></script>
+    <script src="/vendors/js/pickadate/picker.js" type="text/javascript"></script>
+    <script src="/vendors/js/pickadate/picker.date.js" type="text/javascript"></script>
+    <script src="/vendors/js/pickadate/picker.time.js" type="text/javascript"></script>
+    <script src="/vendors/js/pickadate/legacy.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <script src="/vendors/js/datatable/datatables.min.js" type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN APEX JS-->
+    <script src="/js/app-sidebar.js" type="text/javascript"></script>
+    <script src="/js/notification-sidebar.js" type="text/javascript"></script>
+    <script src="/js/customizer.js" type="text/javascript"></script>
+    <!--For Google Place Api-->
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtOb1HEHlHPcv9VhP8Qaq6aCRpyNzaEUg&sensor=false&libraries=places"></script>
+   <!--For Google Place Api-->
+    <script src="/js/common.js" type="text/javascript"></script>
+    <!-- END APEX JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <!-- <script src="/js/dashboard1.js" type="text/javascript"></script> -->
+    <script src="/js/page-common-script.js"></script>
+    <!-- END PAGE LEVEL JS-->
+
+   
+
+    <% if (!_.isEmpty(messages)) { %>
+        <% if(_.keys(messages) == 'success') { %>
+            <script type="text/javascript">
+                toastr.success('<%=messages.success %>', 'Success!', { positionClass: 'toast-top-right', containerId: 'toast-top-right' });
+            </script>
+            <% 
+        }
+    } 
+    %>
+
+
+                <% if (!_.isEmpty(messages)) { %>
+                    <% if(_.keys(messages) == 'error') { %>
+                        <script type="text/javascript">
+                            toastr.error('<%=messages.error %>', 'Error!', { positionClass: 'toast-top-right', containerId: 'toast-top-right' });
+                        </script>
+                        <% 
+        }
+    } 
+    %>
+
+
+</body>
+
+</html>

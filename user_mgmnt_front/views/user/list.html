@@ -1,0 +1,49 @@
+<div ng-controller="UserController as user">
+	<!-- form start -->
+	<form ng-submit="user.saveuser()">
+		<div class="form-group row">
+			<label for="first_name">First Name</label>
+			<input type="text" class="form-control" id="first_name" ng-model="user.adduser.first_name" placeholder="Jhon">
+		</div>
+		<div class="form-group row">
+			<label for="last_name">Last Name</label>
+			<input type="text" class="form-control" id="last_name" ng-model="user.adduser.last_name" placeholder="Doe">
+		</div>
+		<div class="form-group row">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email" ng-model="user.adduser.email" placeholder="jhon@gmail.com">
+		</div>
+		<div class="form-group row">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" ng-model="user.adduser.password">
+		</div>
+		<div class="form-group row">
+			<label for="phone">Phone</label>
+			<input type="text" class="form-control" id="phone" ng-model="user.adduser.phone" placeholder="9966778855">
+		</div>
+		<input type="hidden" ng-model="user.adduser._id">
+		<button type="submit" class="btn btn-primary mb-2">Save</button>
+	</form>
+	<!-- end -->
+
+	<table datatable="ng" dt-options="vm.dtOptions" class="table table-bordered table-striped" ng-init="user.user()">
+		<thead>
+			<tr>
+				<th scope="col">Full Name</th>
+				<th scope="col">Email</th>
+				<th scope="col">Phone</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="userInfo in user.users.data" class="table-active">
+				<td>{{userInfo.first_name}}&nbsp;{{userInfo.last_name}}</td>
+				<td>{{userInfo.email}}</td>
+				<td>{{userInfo.phone}}</td>
+				<td><button type="button" class="btn btn-success" ng-click="user.getUserById(userInfo._id)">Edit</button>
+				<button type="button" class="btn btn-danger" ng-click="user.deleteUser(userInfo._id)">Delete</button></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
