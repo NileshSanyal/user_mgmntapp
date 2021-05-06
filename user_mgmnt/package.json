@@ -34,7 +34,7 @@
     "q": "^1.5.1",
     "request": "^2.88.0",
     "route-label": "^1.2.3",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "url-exists": "^1.0.3"
   }
 }
